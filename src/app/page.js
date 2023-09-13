@@ -27,7 +27,7 @@ export default function App() {
     }
 
     useEffect(() => {
-        if(isLoaded){
+        if (isLoaded){
         if (!hasGetUserMedia()) {
             console.warn("getUserMedia() is not supported by your browser");
             return;
@@ -74,19 +74,19 @@ export default function App() {
             } 
   
             await renderLoop(); 
-        })();  
-        }    
+        })();      
+    }
     }, [isLoaded]);
 
     // Define a function to process handLandmarker r esults
     function processResults(results) {
        const res =  JSON.stringify(results.landmarks);
 
-        console.log(res);  
+        console.log(res);   
     }
     const containerStyle = {
         display: "flex",
-        flexDirection: "column",  
+        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         height: "100vh", // Make the container take up the full viewport height
@@ -95,7 +95,7 @@ export default function App() {
         transform: "scaleX(-1)",
         width: "20vw", 
         height: "20vh",
-        marginTop: "0px", 
+        marginTop: "0px",
       };
  
     return (
