@@ -59,7 +59,7 @@ export default function App() {
             async function renderLoop() {
                 const video = webcamRef.current.video;
                 let timestamp = performance.now();
-                if (video.currentTime !== lastVideoTime) {
+                if (video.readyState === 4 &&video.currentTime !== lastVideoTime) {
                     const handLandmarkerResult = await handLandmarkerRef.current.detectForVideo(video, timestamp);
                     processResults(handLandmarkerResult);
                    const landmarks = JSON.stringify(handLandmarkerResult.landmarks); // Implement this function to get landmarks
