@@ -8,7 +8,7 @@ import { Unity, useUnityContext, SendMessage } from "react-unity-webgl";
 
 export default function App() {
 
-    const { unityProvider, sendMessage } = useUnityContext({
+    const { unityProvider, sendMessage, isLoaded } = useUnityContext({
     loaderUrl: "../web build/Build/web build.loader.js",
     dataUrl: "../web build/Build/web build.data",
     frameworkUrl: "../web build/Build/web build.framework.js",
@@ -27,6 +27,7 @@ export default function App() {
     }
 
     useEffect(() => {
+        if(isLoaded){
         if (!hasGetUserMedia()) {
             console.warn("getUserMedia() is not supported by your browser");
             return;
@@ -73,8 +74,9 @@ export default function App() {
             } 
   
             await renderLoop(); 
-        })();      
-    }, []);
+        })();  
+        }    
+    }, [isLoaded]);
 
     // Define a function to process handLandmarker r esults
     function processResults(results) {
