@@ -1,34 +1,15 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Hand Tracking Game
+The project is a consists of a hand tracking game with unity and mediapipe that allows the user to pick and move objects around with their hand.  
+In this repository you will find the Next.js project as well as the files with which we created the simulation in the Unity game engine from C# scripts to the objects used in the scene.
 
-## Getting Started
+# Quick breakdown of the project
+Within the Next app, I used Google's Mediapipe web implementation to run the hand tracking task on the user's webcam feed to detect their hand.   
+I created the Unity game with the code necessary to retrieve the hand landmarks from the web app and of course, all the desired functionalities of the simulation.  
+Thanks to the amazing and extremely helpful library of React-Unity-WebGL (https://react-unity-webgl.dev/docs/api/send-message) I managed to embed the Unity WebGL build of the simulation within the web app and successfully continuously send the hand landmarks from Next.js to Unity. Finally, the app was deployed using Vercel.  
+Needless to say, you will find the Unity code in the Unity folder and the web app code in the web folder.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Result
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+![ezgif-5-0f3e6b7dac](https://github.com/ahmedbenaissa/HandTrackingGame/assets/78700276/d97d015f-2d0b-4235-81b3-e16d3c314551)
